@@ -1,18 +1,20 @@
-# Use Node.js version 18
+# Use official Node.js image
 FROM node:18-alpine
 
-# Set working directory inside container
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and install dependencies
+# Copy package.json and package-lock.json first
 COPY package*.json ./
-RUN npm install
 
-# Copy the rest of the app files
+# Install only production dependencies
+RUN npm install --production
+
+# Copy everything (including the public folder)
 COPY . .
 
-# Expose port 8080 so it can be accessed
+# Expose the app port
 EXPOSE 8080
 
 # Start the app
-CMD ["npm", "start"]
+CMD ["node", "app.js"]

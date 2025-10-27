@@ -1,7 +1,7 @@
+version: "3"
 services:
   calculator:
-    build: .
     container_name: calculator-app
+    build: .
     ports:
-      - "9090:8080"   # maps container's port 8080 → local port 9090
-    restart: always
+      - "9090:8080"

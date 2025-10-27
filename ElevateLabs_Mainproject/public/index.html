@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Elevate Calculator</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="light">
+  <div class="app">
+    <header>
+      <h1>Elevate Calculator</h1>
+      <div class="controls">
+        <label class="theme-switch">
+          <input id="themeToggle" type="checkbox" />
+          <span>Dark</span>
+        </label>
+      </div>
+    </header>
+
+    <main>
+      <section class="calc-pane">
+        <div class="display" id="display">0</div>
+        <div class="buttons" id="buttons">
+          <!-- first row -->
+          <button data-action="clear">C</button>
+          <button data-action="plusminus">±</button>
+          <button data-action="percent">%</button>
+          <button data-op="div">÷</button>
+
+          <!-- numbers -->
+          <button>7</button><button>8</button><button>9</button><button data-op="mul">×</button>
+          <button>4</button><button>5</button><button>6</button><button data-op="sub">−</button>
+          <button>1</button><button>2</button><button>3</button><button data-op="add">+</button>
+          <button data-action="0" class="zero">0</button><button data-action=".">.</button>
+          <button data-action="equals" class="equals">=</button>
+        </div>
+
+        <div class="history" id="history">
+          <h3>History</h3>
+          <ul id="historyList"></ul>
+        </div>
+      </section>
+
+      <section class="extras">
+        <div class="card">
+          <h3>Age from DOB</h3>
+          <input id="dob" type="date" />
+          <button id="calcAge">Calculate Age</button>
+          <div id="ageResult" class="result"></div>
+        </div>
+
+        <div class="card">
+          <h3>Time Converter</h3>
+          <input id="timeIn" type="number" placeholder="Enter value" />
+          <select id="timeUnit">
+            <option value="seconds">Seconds</option>
+            <option value="minutes">Minutes</option>
+            <option value="hours">Hours</option>
+          </select>
+          <button id="convertTime">Convert</button>
+          <div id="timeResult" class="result"></div>
+        </div>
+
+        <div class="card">
+          <h3>Base Converter</h3>
+          <input id="baseIn" type="number" placeholder="Decimal input" />
+          <button id="toBin">To Binary</button>
+          <button id="toHex">To Hex</button>
+          <div id="baseResult" class="result"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>API powered by /calc endpoint — host: <code>/calc?num1=&num2=&op=add|sub|mul|div</code></small>
+    </footer>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
