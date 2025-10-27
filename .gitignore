@@ -1,0 +1,15 @@
+# Node and environment folders
+node_modules/
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.env
