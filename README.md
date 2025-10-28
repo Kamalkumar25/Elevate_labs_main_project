@@ -68,5 +68,6 @@ This project implements a **fully automated pipeline** using GitHub Actions:
 ### 🔹 Build and Run Locally
 ```bash
 docker-compose up --build
+docker pull kamalkumar25/elevate-calculator:latest
+docker run -p 9090:8080 kamalkumar25/elevate-calculator
 *Access the app at*: http://localhost:9090
-
